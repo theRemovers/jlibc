@@ -1,0 +1,9 @@
+fputc.o: fputc.c
+fputs.o: fputs.c
+fprintf.o: fprintf.c
+fclose.o: fclose.c
+fflush.o: fflush.c
+feof.o: feof.c
+fwrite.o: fwrite.c
+vfprintf.o: vfprintf.c
+sprintf.o: sprintf.c

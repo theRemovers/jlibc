@@ -1,0 +1,79 @@
+make -C string 
+make[1]: entrant dans le répertoire « /home/sbriais/Jaguar/src/jlibc/string »
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c strchr.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c strrchr.c
+strrchr.c: Dans la fonction « strrchr »:
+strrchr.c:25: attention : suggest parentheses around assignment used as truth value
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c memchr.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c memcmp.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c strlen.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c strcpy.c
+strcpy.c: Dans la fonction « strcpy »:
+strcpy.c:23: attention : suggest parentheses around assignment used as truth value
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c strncpy.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c strcmp.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c strncmp.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c strcoll.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c strcat.c
+strcat.c: Dans la fonction « strcat »:
+strcat.c:26: attention : suggest parentheses around assignment used as truth value
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c strncat.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c strxfrm.c
+/home/sbriais/Jaguar/bin/mac -fb -v bzero.s
+[Including: bzero.s]
+[Leaving: bzero.s]
+[Writing BSD object file: bzero.o]
+/home/sbriais/Jaguar/bin/mac -fb -v bcopy.s
+[Including: bcopy.s]
+[Leaving: bcopy.s]
+[Writing BSD object file: bcopy.o]
+make[1]: quittant le répertoire « /home/sbriais/Jaguar/src/jlibc/string »
+make -C stdlib 
+make[1]: entrant dans le répertoire « /home/sbriais/Jaguar/src/jlibc/stdlib »
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c malloc.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c calloc.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c free.c
+/home/sbriais/Jaguar/bin/mac -fb -v rand.s
+[Including: rand.s]
+[Leaving: rand.s]
+[Writing BSD object file: rand.o]
+make[1]: quittant le répertoire « /home/sbriais/Jaguar/src/jlibc/stdlib »
+make -C ctype 
+make[1]: entrant dans le répertoire « /home/sbriais/Jaguar/src/jlibc/ctype »
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c isalnum.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c isalpha.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c isdigit.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c iscntrl.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c isgraph.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c islower.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c isprint.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c ispunct.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c isspace.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c isupper.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c isxdigit.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c toupper.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c tolower.c
+make[1]: quittant le répertoire « /home/sbriais/Jaguar/src/jlibc/ctype »
+make -C stdio 
+make[1]: entrant dans le répertoire « /home/sbriais/Jaguar/src/jlibc/stdio »
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c fputc.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c fputs.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c fprintf.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c fclose.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c fflush.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c feof.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c fwrite.c
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c vfprintf.c
+vfprintf.c: Dans la fonction « vfprintf »:
+vfprintf.c:36: attention : `d' might be used uninitialized in this function
+/usr/local/m68k-aout/m68k-aout/bin/gcc -mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float  -c sprintf.c
+sprintf.c: Dans la fonction « puts »:
+sprintf.c:14: attention : use of cast expressions as lvalues is deprecated
+make[1]: quittant le répertoire « /home/sbriais/Jaguar/src/jlibc/stdio »
+make -C doc 
+make[1]: entrant dans le répertoire « /home/sbriais/Jaguar/src/jlibc/doc »
+doxygen
+make[1]: doxygen : commande introuvable
+make[1]: *** [all] Erreur 127
+make[1]: quittant le répertoire « /home/sbriais/Jaguar/src/jlibc/doc »
+make: *** [doc] Erreur 2

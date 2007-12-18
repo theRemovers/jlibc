@@ -1,0 +1,3 @@
+malloc.o: malloc.c stdlib.h malloc.h ../jagtypes.h
+calloc.o: calloc.c stdlib.h
+free.o: free.c stdlib.h malloc.h ../jagtypes.h

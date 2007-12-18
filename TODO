@@ -1,0 +1,182 @@
+stdlib.h
+--------
+abort
+atexit
+atof		
+atoi
+atol
+bsearch
+calloc			y
+div
+exit
+free			y
+getenv
+labs
+ldiv
+malloc			y
+mblen		
+mbstowcs
+mbtowc
+qsort
+rand			y
+realloc
+srand			y
+strtod			
+strtol			
+strtoul			
+system
+wcstombs
+wctomb
+
+stdio.h
+-------
+clearerr
+fclose
+feof
+ferror
+fflush
+fgetc
+fgetpos
+fgets
+fopen
+fprintf
+fputc
+fputs
+fread
+freopen
+fscanf
+fseek
+fsetpos
+ftell		
+fwrite
+getc
+getchar
+gets		
+perror
+printf
+putc		
+putchar
+puts		
+remove
+rename
+rewind
+scanf
+setbuf
+setvbuf
+sprintf
+sscanf
+tmpfile
+tmpnam
+ungetc
+vfprintf
+vprintf
+vsprintf
+
+time.h
+------
+asctime
+clock
+ctime
+difftime
+gmtime
+localtime
+mktime
+strftime
+time
+
+math.h
+------
+abs		
+acos
+asin
+atan
+atan2
+ceil
+cos
+cosh
+exp
+fabs
+floor
+fmod		
+frexp
+ldexp
+log
+log10
+modf
+pow
+sin
+sinh
+sqrt
+tan			
+tanh			
+
+assert.h
+--------
+assert
+
+ctype.h
+-------
+isalnum			y
+isalpha			y
+iscntrl			y
+isdigit			y
+isgraph			y
+islower			y
+isprint			y
+ispunct			y
+isspace			y
+isupper			y
+isxdigit		y
+tolower			y
+toupper			y
+
+locale.h
+--------
+localeconv
+setlocale
+
+setjmp.h
+--------
+longjmp
+setjmp
+
+string.h
+--------
+memchr			y
+memcmp			y
+memcpy			y
+memmove			y
+memset			y
+strcat			y
+strchr			y
+strcmp			y
+strcoll			y
+strcpy			y
+strcspn			
+strerror		
+strlen			y
+strncat			y
+strncmp			y
+strncpy			y
+strpbrk			
+strrchr			y
+strspn			
+strstr			
+strtok			
+strxfrm			y
+
+stddef.h
+--------
+offsetof
+
+signal.h
+--------
+raise
+signal
+
+stdarg.h
+--------
+va_arg			y	gcc
+va_end			y	gcc
+va_start		y	gcc
+
