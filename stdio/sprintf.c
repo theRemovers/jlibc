@@ -11,7 +11,7 @@ static int putc(FILE *stream, char c) {
 static int puts(FILE *stream, const char *s) {
   int n = strlen(s);
   bcopy(s,(char*)stream->data,n);
-  (char*)stream->data += n;
+  stream->data = (char *)stream->data + n;
   return n;
 }
 

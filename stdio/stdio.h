@@ -53,6 +53,7 @@ int fputs(const char *s, FILE *stream);
 int fprintf(FILE *stream, const char *fmt, ...);
 int sprintf(char *str, const char *fmt, ...);
 int vfprintf(FILE *stream, const char *fmt, va_list ap);
+int vsprintf(char *str, const char *fmt, va_list ap);
 
 /** Close a file */
 int fclose(FILE *stream);

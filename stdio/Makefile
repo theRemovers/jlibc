@@ -8,7 +8,7 @@ MACFLAGS=-fb -v
 CFLAGS=-mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float 
 
 SRCC=fputc.c fputs.c fprintf.c fclose.c fflush.c feof.c fwrite.c
-SRCC+=vfprintf.c sprintf.c
+SRCC+=vfprintf.c sprintf.c vsprintf.c
 SRCS=
 SRCH=stdio.h
 OBJS=$(SRCC:.c=.o) $(SRCS:.s=.o)

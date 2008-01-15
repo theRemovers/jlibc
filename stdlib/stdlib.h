@@ -27,6 +27,9 @@
 
 #define STACKSIZE (16*1024)
 
+/** Exit abnormally (illegal) */
+void abort();
+
 /** Memory allocation. It returns the address of a buffer which is
  * phrase aligned in memory. */
 void *malloc(size_t size);

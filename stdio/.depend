@@ -7,3 +7,4 @@ feof.o: feof.c
 fwrite.o: fwrite.c
 vfprintf.o: vfprintf.c
 sprintf.o: sprintf.c
+vsprintf.o: vsprintf.c
