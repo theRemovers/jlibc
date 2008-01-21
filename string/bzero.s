@@ -31,7 +31,7 @@ _bzero:
 ;;; void *memset (void *s, int c, size_t n)
 _memset:
 	move.l	4(sp),a0
-	move.b	9(sp),d0
+	move.b	11(sp),d0
 	move.b	d0,d1
 	lsl.w	#8,d0
 	move.b	d1,d0
