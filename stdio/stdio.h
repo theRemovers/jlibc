@@ -30,14 +30,14 @@
 
 #define EOF (-1)
 
-typedef struct _FILE {
+typedef struct FILE {
   void *data;
-  int (*eof)(struct _FILE *self);
-  int (*putc)(struct _FILE *self,char c);
-  int (*puts)(struct _FILE *self,const char *s);
-  size_t (*write)(struct _FILE *self,const void *ptr, size_t size, size_t nmemb);
-  int (*flush)(struct _FILE *self);
-  int (*close)(struct _FILE *self);
+  int (*eof)(struct FILE *self);
+  int (*putc)(struct FILE *self,char c);
+  int (*puts)(struct FILE *self,const char *s);
+  size_t (*write)(struct FILE *self,const void *ptr, size_t size, size_t nmemb);
+  int (*flush)(struct FILE *self);
+  int (*close)(struct FILE *self);
 } FILE;
 
 /** Is end of file? */
