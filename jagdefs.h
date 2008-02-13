@@ -27,13 +27,14 @@
 #define SET_SHORT_INT(value,addr) { short int v = (value); short int *a = (short int *)(addr); asm("movew %0,%1" : : "g" (v), "m" (*a) : "cc"); }
 #define SET_LONG_INT(value,addr) { long v = (value); long *a = (long *)(addr); asm("movel %0,%1" : : "g" (v), "m" (*a) : "cc"); }
 
-extern phrase stop_object;
-extern short int a_vde;
-extern short int a_vdb;
-extern short int a_hde;
-extern short int a_hdb;
-extern short int video_width;
-extern short int video_height;
+extern const phrase stop_object;
+extern const short int a_vde;
+extern const short int a_vdb;
+extern const short int a_hde;
+extern const short int a_hdb;
+extern const short int video_width;
+extern const short int video_height;
+extern const short int vblPerSec;
 
 extern void reset();
 

@@ -63,12 +63,14 @@ init_video:
 	move.w	CONFIG,d0	; Also is joystick register
 	andi.w	#VIDTYPE,d0	;0=PAL,1=NTSC
 	beq	.palvals
+	move.w	#60,_vblPerSec	; 60 Hz
 	move.w	#NTSC_HMID,d2
 	move.w	#NTSC_WIDTH,d0
 	move.w	#NTSC_VMID,d6
 	move.w	#NTSC_HEIGHT,d4
 	bra	.calc_vals
 .palvals:
+	move.w	#50,_vblPerSec	; 50 Hz
 	move.w	#PAL_HMID,d2
 	move.w	#PAL_WIDTH,d0
 	move.w	#PAL_VMID,d6
@@ -122,14 +124,17 @@ _bss_start:
 	.globl	_video_width
 	.globl	_a_hdb
 	.globl	_a_hde
+
+	.globl	_vblPerSec
 	
 	.even
-_video_height:ds.w    1
-_a_vdb:	ds.w    1
-_a_vde:	ds.w    1
+_video_height:	ds.w    1
+_a_vdb:		ds.w    1
+_a_vde:		ds.w    1
 _video_width:	ds.w    1
-_a_hdb:	ds.w    1
-_a_hde:	ds.w    1
+_a_hdb:		ds.w    1
+_a_hde:		ds.w    1
+_vblPerSec:	ds.w	1
 
 		
 
