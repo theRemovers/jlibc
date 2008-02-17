@@ -128,7 +128,9 @@ extern void reset();
 // Blitter Registers
 
 #define SRCEN (0x1)
+#define SRCENX (0x1 << 1)
 #define DSTEN (0x1 << 3)
+#define PATDSEL (0x1 << 16)
 #define CMPDST (0x1 << 25)
 #define BCOMPEN (0x1 << 26)
 #define DCOMPEN (0x1 << 27)
