@@ -23,6 +23,8 @@
 static char digits_lower[16] = "0123456789abcdef";
 static char digits_upper[16] = "0123456789ABCDEF";
 
+static unsigned long base10[9] = {1000000000, 100000000, 10000000, 1000000, 100000, 10000, 1000, 100, 10};
+
 #define BUFSIZE 64
 
 /* %[flags][width][.precision][length]specifier */
@@ -72,6 +74,42 @@ static char digits_upper[16] = "0123456789ABCDEF";
 /* h	The argument is interpreted as a short int or unsigned short int (only applies to integer specifiers: i, d, o, u, x and X). */
 /* l	The argument is interpreted as a long int or unsigned long int for integer specifiers (i, d, o, u, x and X), and as a wide character or wide character string for specifiers c and s. */
 /* L	The argument is interpreted as a long double (only applies to floating point specifiers: e, E, f, g and G */
+
+static inline int print_uint(char *s, char *digits, unsigned int n, int shift) {
+  int mask = (1 << shift)-1;
+  int nb = 0;
+  *s = 0;
+  while(n != 0) {
+    *--s = digits[n & mask];
+    n >>= shift;
+    nb++;
+  }
+  if(*s == 0) {
+    *--s = '0';
+    nb++;
+  }
+  return nb;
+}
+
+static inline int print_uint10(char *s, unsigned int n) {
+  int i;
+  unsigned char d;
+  int nb = 0;
+  for(i = 0; (i < 9) && (n < base10[i]); i++) {
+  }
+  for(;i < 9; i++) {
+    for(d = '0'; base10[i] <= n; d++) {
+      n -= base10[i];
+    }
+    *s++ = d;
+    nb++;
+  }
+  n += '0';
+  nb++;
+  *s++ = n;
+  *s = 0;
+  return nb;
+}
 
 int vfprintf(FILE *stream, const char *fmt, va_list ap) {
   int nb = 0;
@@ -171,19 +209,36 @@ int vfprintf(FILE *stream, const char *fmt, va_list ap) {
 	break;
       };
       if(base > 0) {
-	s=buffer+BUFSIZE;
-	*--s = 0;
-	while(d != 0) { 
-	  *--s = digits[d % base];
-	  d /= base;
-	  nb++;
-	  nb_digit--;
+	int nbd = 0;
+	switch(base) {
+	case 2: {
+	  nbd = print_uint(buffer+BUFSIZE,digits,d,1);
+	  s = buffer+BUFSIZE-nbd;
+	  break;
 	}
-	if(*s == 0) {
-	  *--s = '0';
-	  nb++;
-	  nb_digit--;
+	case 8: {
+	  nbd = print_uint(buffer+BUFSIZE,digits,d,3);
+	  s = buffer+BUFSIZE-nbd;
+	  break;
 	}
+	case 16: {
+	  nbd = print_uint(buffer+BUFSIZE,digits,d,4);
+	  s = buffer+BUFSIZE-nbd;
+	  break;
+	}
+	default: {
+	  nbd = print_uint10(buffer,d);
+	  s = buffer;
+/* 	  while(d != 0) {  */
+/* 	    *--s = digits[d % base]; */
+/* 	    d /= base; */
+/* 	    nb++; */
+/* 	    nb_digit--; */
+/* 	  } */
+	}
+	}
+	nb += nbd;
+	nb_digit -= nbd;
 	while(--nb_digit >= 0) {
 	  fputc(fill_digit,stream);
 	  nb++;
