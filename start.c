@@ -17,9 +17,31 @@
 /* Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA */
 
 #include <stdlib.h>
-extern void _m_init();
+//extern void _m_init();
+
+extern char BSS_E[];
+#define ENDRAM 0x200000
+
+static int sbrk_init;
+static unsigned long sbrk_ptr;
+static unsigned long sbrk_endram;
+
+void *sbrk(unsigned long nb) {
+  if(!sbrk_init) {
+    sbrk_ptr = (((unsigned long)BSS_E+7L) & (~7L));
+    sbrk_init = 1;
+  }
+  if(sbrk_ptr + nb > sbrk_endram) {
+    return NULL;
+  }
+  void *ret = (void *)sbrk_ptr;
+  sbrk_ptr += nb;
+  return ret;
+}
 
 void __main() {
-  _m_init();
+  //  _m_init();
+  sbrk_init = 0;
+  sbrk_endram = ENDRAM-STACKSIZE;
   srand(1);
 }
