@@ -47,11 +47,13 @@ void *malloc(size_t size) {
 }
 
 #define ENDRAM 0x200000
-extern char BSS_E;
+#define ALIGN(n) (((n)+sizeof(header)) & (~(sizeof(header)-1)))
+extern char BSS_E[];
 
 void _m_init() {
-  char *bss_end = (char *)((((unsigned long)&BSS_E) + sizeof(header)) & (~(sizeof(header)-1)));
-  __pfree = (header *)bss_end;
-  __pfree->s.ptr = (header *)bss_end;
+  //  char *bss_end = (char *)((((unsigned long)BSS_E) + sizeof(header)) & (~(sizeof(header)-1)));
+  header *bss_end = (header *)(ALIGN((unsigned long)BSS_E));
+  __pfree = bss_end;
+  __pfree->s.ptr = bss_end;
   __pfree->s.size = (ENDRAM-STACKSIZE-(unsigned long)bss_end) / sizeof(header);
 }
