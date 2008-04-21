@@ -1358,6 +1358,7 @@ static int init_mparams(void) {
   return 0;
 }
 
+#if 0
 /* support for mallopt */
 static int change_mparam(int param_number, int value) {
   size_t val = (size_t)value;
@@ -1380,6 +1381,7 @@ static int change_mparam(int param_number, int value) {
     return 0;
   }
 }
+#endif
 
 #if DEBUG
 /* ------------------------- Debugging Support --------------------------- */
@@ -1691,6 +1693,7 @@ static struct mallinfo internal_mallinfo(mstate m) {
 }
 #endif /* !NO_MALLINFO */
 
+#if 0
 static void internal_malloc_stats(mstate m) {
   if (!PREACTION(m)) {
     size_t maxfp = 0;
@@ -1715,13 +1718,14 @@ static void internal_malloc_stats(mstate m) {
       }
     }
 
-/*     fprintf(stderr, "max system bytes = %10lu\n", (unsigned long)(maxfp)); */
-/*     fprintf(stderr, "system bytes     = %10lu\n", (unsigned long)(fp)); */
-/*     fprintf(stderr, "in use bytes     = %10lu\n", (unsigned long)(used)); */
+    fprintf(stderr, "max system bytes = %10lu\n", (unsigned long)(maxfp));
+    fprintf(stderr, "system bytes     = %10lu\n", (unsigned long)(fp));
+    fprintf(stderr, "in use bytes     = %10lu\n", (unsigned long)(used));
 
     POSTACTION(m);
   }
 }
+#endif
 
 /* ----------------------- Operations on smallbins ----------------------- */
 
@@ -3189,6 +3193,7 @@ void* dlpvalloc(size_t bytes) {
   return dlmemalign(pagesz, (bytes + pagesz - SIZE_T_ONE) & ~(pagesz - SIZE_T_ONE));
 }
 
+#if 0
 int dlmalloc_trim(size_t pad) {
   int result = 0;
   if (!PREACTION(gm)) {
@@ -3201,10 +3206,13 @@ int dlmalloc_trim(size_t pad) {
 size_t dlmalloc_footprint(void) {
   return gm->footprint;
 }
+#endif
 
+#if 0
 size_t dlmalloc_max_footprint(void) {
   return gm->max_footprint;
 }
+#endif
 
 #if !NO_MALLINFO
 struct mallinfo dlmallinfo(void) {
@@ -3212,6 +3220,7 @@ struct mallinfo dlmallinfo(void) {
 }
 #endif /* NO_MALLINFO */
 
+#if 0
 void dlmalloc_stats() {
   internal_malloc_stats(gm);
 }
@@ -3228,6 +3237,7 @@ size_t dlmalloc_usable_size(void* mem) {
 int dlmallopt(int param_number, int value) {
   return change_mparam(param_number, value);
 }
+#endif
 
 #endif /* !ONLY_MSPACES */
 

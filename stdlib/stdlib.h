@@ -44,6 +44,11 @@ void *calloc(size_t nmemb,size_t size);
  * given address must be a valid one. */
 void free(void *ptr);
 
+void *memalign(size_t boundary, size_t size);
+
+void * realloc (void * ptr, size_t size);
+
+
 /** The maximal pseudo-random number generated */
 #define RAND_MAX ((1<<32)-1)
 

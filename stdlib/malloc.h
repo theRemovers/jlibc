@@ -378,7 +378,11 @@ NO_MALLINFO                default: 0
   If defined, don't compile "mallinfo". This can be a simple way
   of dealing with mismatches between system declarations and
   those in this file.
+*/
 
+#define NO_MALLINFO 1
+
+/*
 MALLINFO_FIELD_TYPE        default: size_t
   The type of the fields in the mallinfo struct. This was originally
   defined as "int" in SVID etc, but is more usefully defined as
