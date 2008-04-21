@@ -9,7 +9,7 @@ CFLAGS=-mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float
 
 #SRCC=malloc.c calloc.c free.c 
 SRCC=malloc.c
-SRCC+=abort.c
+#SRCC+=abort.c
 SRCS=rand.s
 SRCH=stdlib.h malloc.h
 OBJS=$(SRCC:.c=.o) $(SRCS:.s=.o)

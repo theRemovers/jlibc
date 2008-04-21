@@ -28,7 +28,8 @@
 #define STACKSIZE (16*1024)
 
 /** Exit abnormally (illegal) */
-void abort();
+//void abort();
+#define abort() asm("illegal")
 
 /** Memory allocation. It returns the address of a buffer which is
  * phrase aligned in memory. */
