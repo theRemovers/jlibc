@@ -27,10 +27,6 @@
 	.extern	_BSS_E
 
 _text_start:
-.wait_blitter:
-	move.l	B_CMD,d0
-	btst.l	#0,d0
-	beq.s	.wait_blitter
         move.w  #$100,JOYSTICK	; mute sound
         move.l  #0,G_CTRL	; stop GPU
         move.l  #0,D_CTRL	; stop DSP
@@ -40,18 +36,24 @@ _text_start:
         move.l  #$00070007,D_END	; DSP in BigEndian
         move.w  #%11010111001100,MEMCON2	; memory in BigEndian
         move.w  #$ffff,VI	; disable video interrupts
-	
+	;; wait blitter
+.wait_blitter:
+	move.l	B_CMD,d0
+	btst.l	#0,d0
+	beq.s	.wait_blitter
+	move.l	#0,A1_CLIP	; A1_CLIP workaround
+	;; 
 	move.l	#INITSTACK,sp	; init SP
-
+	;; clear BSS section
 	move.l	#_BSS_E,d0
 	sub.l	#_bss_start,d0
 	move.l	d0,-(sp)
 	move.l	#_bss_start,-(sp)
 	jsr	_bzero
 	addq.w	#8,sp
-	
+	;; init video
 	jsr	init_video
-	
+	;; empty object list
 	move.l	#_stop_object,d0
 	swap	d0
 	move.l	d0,OLP
