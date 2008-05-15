@@ -26,7 +26,11 @@
 	.globl	_text_start
 	.extern	_BSS_E
 
-_text_start:	
+_text_start:
+.wait_blitter:
+	move.l	B_CMD,d0
+	btst.l	#0,d0
+	beq.s	.wait_blitter
         move.w  #$100,JOYSTICK	; mute sound
         move.l  #0,G_CTRL	; stop GPU
         move.l  #0,D_CTRL	; stop DSP
