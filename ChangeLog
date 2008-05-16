@@ -1,0 +1,11 @@
+	The Jaguar C Library.
+
+0.5.4
+-----
+	Addition of this ChangeLog file.
+
+	Changed the memory allocator to use the one of Doug Lea which is a
+	public domain piece of code.  The benefits are obvious since now,
+	we are using a well tested and fully featured memory
+	allocator (memalign/realloc in particular).
+
