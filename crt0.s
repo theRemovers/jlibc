@@ -24,8 +24,10 @@
 	.extern	_main
 	.extern	_bzero
 	.globl	_text_start
+	.globl	_reset
 	.extern	_BSS_E
 
+_reset:	
 _text_start:
         move.w  #$100,JOYSTICK	; mute sound
         move.l  #0,G_CTRL	; stop GPU
@@ -52,18 +54,14 @@ _text_start:
 	jsr	_bzero
 	addq.w	#8,sp
 	;; init video
-	jsr	init_video
+	bsr	init_video
 	;; empty object list
 	move.l	#_stop_object,d0
 	swap	d0
 	move.l	d0,OLP
-	
+	;; jump to main
 	jmp	_main
 
-	.globl	_reset
-_reset:
-	jmp	_text_start
-	
 init_video:
 	movem.l	d2-d6,-(sp)
 	move.w	CONFIG,d0	; Also is joystick register
