@@ -1,0 +1,3 @@
+start.o: start.c /usr/local/m68k-aout/m68k-aout/include/stdlib.h \
+  /usr/local/m68k-aout/lib/gcc-lib/m68k-aout/3.3.6/include/stddef.h \
+  /usr/local/m68k-aout/m68k-aout/include/string.h
