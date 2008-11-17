@@ -4,6 +4,9 @@ MADMAC=$(JAGPATH)/bin/mac
 CC=$(CROSSPATH)/bin/gcc
 AR=$(CROSSPATH)/bin/ar
 
+export JAGPATH
+export CROSSPATH
+
 MACFLAGS=-fb -v
 CFLAGS=-mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float 
 SRCS=crt0.s
@@ -17,6 +20,8 @@ SUBDIRS=$(ASUBDIRS) $(OSUBDIRS)
 PROJECT=jlibc
 # change also in Doxyfile!!!
 PROJECT_NUMBER=0.5.5
+
+export PROJECT_NUMBER
 
 TARFILE=$(PROJECT)-$(PROJECT_NUMBER).tar
 
