@@ -1,14 +1,5 @@
-JAGPATH?=$(HOME)/Jaguar
-CROSSPATH?=/usr/local/m68k-aout/m68k-aout
-MADMAC=$(JAGPATH)/bin/mac
-CC=$(CROSSPATH)/bin/gcc
-AR=$(CROSSPATH)/bin/ar
+include Makefile.config
 
-export JAGPATH
-export CROSSPATH
-
-MACFLAGS=-fb -v
-CFLAGS=-mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float 
 SRCS=crt0.s
 SRCC=start.c
 SRCH=main.h jagtypes.h jagdefs.h
@@ -29,8 +20,6 @@ DISTFILES=Makefile $(SRCS) $(SRCC) $(SRCH)
 DISTFILES+=ChangeLog LICENSE jaguar.inc TODO build.sh
 INSTALLH=jagtypes.h jagdefs.h
 INSTALLLIB=crt0.o $(PROJECT).a
-
-TARGET=$(HOME)/tmp/jlibc
 
 all: .depend $(PROJECT).a
 
