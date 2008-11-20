@@ -31,6 +31,9 @@
 //void abort();
 #define abort() asm("illegal")
 
+/** String to int conversion */
+int atoi(const char *nptr);
+
 /** Memory allocation. It returns the address of a buffer which is
  * phrase aligned in memory. */
 void *malloc(size_t size);

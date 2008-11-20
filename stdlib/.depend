@@ -1,1 +1,2 @@
 malloc.o: malloc.c malloc.h
+atoi.o: atoi.c

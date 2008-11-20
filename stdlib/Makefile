@@ -8,14 +8,14 @@ MACFLAGS=-fb -v
 CFLAGS=-mc68000 -Wall -fomit-frame-pointer -O2 -msoft-float 
 
 #SRCC=malloc.c calloc.c free.c 
-SRCC=malloc.c
+SRCC=malloc.c atoi.c
 #SRCC+=abort.c
 SRCS=rand.s
 SRCH=stdlib.h malloc.h
 OBJS=$(SRCC:.c=.o) $(SRCS:.s=.o)
 
 DISTFILES=Makefile $(SRCC) $(SRCS) $(SRCH)
-INSTALLH=stdlib.h
+INSTALLH=stdlib.h 
 INSTALLLIB=
 
 all: .depend $(OBJS)
