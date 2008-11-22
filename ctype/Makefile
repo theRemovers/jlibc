@@ -1,6 +1,6 @@
 include ../Makefile.config
 
-SRCC=isxdigit.c 
+SRCC=
 SRCS=
 SRCH=ctype.h
 OBJS=$(SRCC:.c=.o) $(SRCS:.s=.o)
@@ -10,7 +10,7 @@ DISTFILES=Makefile $(SRCC) $(SRCH) $(SRCS)
 INSTALLH=ctype.h
 INSTALLLIB=
 
-all: .depend $(OBJS)
+all: $(OBJS)
 
 %.o: %.s
 	$(MADMAC) $(MACFLAGS) $<
@@ -21,7 +21,7 @@ all: .depend $(OBJS)
 clean:
 	rm -f *~ $(OBJS) .depend
 
-.depend: $(SRCC)
+.depend: $(SRCC) $(SRCH)
 	$(CC) -M $(SRCC) > .depend
 
 dist-files:

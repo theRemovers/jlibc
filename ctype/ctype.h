@@ -109,7 +109,7 @@
     \hideinitializer */
 #define ispunct(c$) \
   ({ int _c = c$; \
-     (isgraph(_c)) && (!isalnum(_c)); })
+     ((isgraph(_c)) && (!isalnum(_c))); })
 
 /** Is whitespace? 
 
@@ -120,7 +120,7 @@
     \hideinitializer */
 #define isspace(c$) \
   ({ int _c = c$; \
-     ((_c == '\f') || (_c == '\n') || (_c == '\r') || (_c == '\t') || (c == '\v') || (c == ' ')); })
+     ((_c == '\f') || (_c == '\n') || (_c == '\r') || (_c == '\t') || (_c == '\v') || (_c == ' ')); })
 
 /** Is uppercase letter? 
 
@@ -133,8 +133,16 @@
   ({ int _c = c$; \
      ((_c >= 'A') && (_c <= 'Z')); })
 
-/** Is hexa digit? */
-int isxdigit (int c);
+/** Is hexa digit?
+
+    @param c = a character
+
+    @return TRUE if c is a hex digit, FALSE otherwise
+
+    \hideinitializer */
+#define isxdigit(c$) \
+  ({ int _c = c$; \
+     (isdigit(_c) || ((_c >= 'a') && (_c <= 'f')) || ((_c >= 'A') && (_c <= 'F'))); })
 
 /** Conversion to uppercase 
 
@@ -145,8 +153,7 @@ int isxdigit (int c);
     \hideinitializer */
 #define toupper(c$) \
   ({ int _c = c$; \
-     islower(_c)?(_c + 'A' - 'a'):_c; })
-
+     (islower(_c))?(_c + 'A' - 'a'):_c; })
 
 /** Conversion to lowercase 
 
@@ -157,6 +164,6 @@ int isxdigit (int c);
     \hideinitializer */
 #define tolower(c$) \
   ({ int _c = c$; \
-     isupper(_c)?(_c + 'a' - 'A'):_c; })
+     ((isupper(_c))?(_c + 'a' - 'A'):_c); })
 
 #endif
