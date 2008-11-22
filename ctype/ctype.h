@@ -17,22 +17,54 @@
 /* Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA */
 
 /** \file ctype.h
- * \brief Character manipulation.
+ * \brief Character filters.
  */
 #ifndef __CTYPE_H
 #define __CTYPE_H
 
-/** Is a letter or a digit? */
-int isalnum (int c);
+/** Is a letter or a digit? 
 
-/** Is a letter? */
-int isalpha (int c);
+    @param c = a character
 
-/** Is a control character? */
-int iscntrl (int c);
+    @return TRUE if c is a letter or a digit, FALSE otherwise 
 
-/** Is a digit? */
-int isdigit (int c);
+    \hideinitializer */
+#define isalnum(c$) \
+  ({ int _c = c$; \
+     isalpha(_c) || isdigit(_c); })
+
+/** Is a letter? 
+
+    @param c = a character
+
+    @return TRUE if c is a letter, FALSE otherwise 
+
+    \hideinitializer */
+#define isalpha(c$) \
+  ({ int _c = c$; \
+     (((_c >= 'a') && (_c <= 'z')) || ((_c >= 'A') && (_c <= 'Z'))); })
+
+/** Is a control character? 
+
+   @param c = a character
+
+    @return TRUE if c is a control character, FALSE otherwise 
+
+    \hideinitializer */
+#define iscntrl(c$) \
+  ({ int _c = c$; \
+     (((_c >= 0) && (_c < 32)) || (_c == 127)); })
+
+/** Is a digit? 
+
+    @param c = a character
+
+    @return TRUE if c is a digit, FALSE otherwise 
+
+    \hideinitializer */
+#define isdigit(c$) \
+  ({ int _c = c$; \
+     ((_c >= '0') && (_c <= '9')); })
 
 /** Is a printable character different from a whitespace? */
 int isgraph (int c);
