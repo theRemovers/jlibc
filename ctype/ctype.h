@@ -66,8 +66,16 @@
   ({ int _c = c$; \
      ((_c >= '0') && (_c <= '9')); })
 
-/** Is a printable character different from a whitespace? */
-int isgraph (int c);
+/** Is a printable character different from a whitespace? 
+
+    @param c = a character
+
+    @return TRUE if c is printable character, FALSE otherwise 
+
+    \hideinitializer */
+#define isgraph(c$) \
+  ({ int _c = c$; \
+     ((_c >= 32) && (_c < 256) && (_c != ' ')); })
 
 /** Is lowercase letter? */
 int islower (int c);
