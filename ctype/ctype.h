@@ -42,7 +42,7 @@
     \hideinitializer */
 #define isalpha(c$) \
   ({ int _c = c$; \
-     (((_c >= 'a') && (_c <= 'z')) || ((_c >= 'A') && (_c <= 'Z'))); })
+     ((islower(_c)) || (isupper(_c))); })
 
 /** Is a control character? 
 
@@ -70,28 +70,68 @@
 
     @param c = a character
 
-    @return TRUE if c is printable character, FALSE otherwise 
+    @return TRUE if c is printable character different from a whitespace, FALSE otherwise 
 
     \hideinitializer */
 #define isgraph(c$) \
   ({ int _c = c$; \
-     ((_c >= 32) && (_c < 256) && (_c != ' ')); })
+     ((isprint(_c)) && (!isspace(_c))); })
 
-/** Is lowercase letter? */
-int islower (int c);
+/** Is lowercase letter? 
 
-/** Is a printable character? */
-int isprint (int c);
+    @param c = a character
+
+    @return TRUE if c is a lowercase letter, FALSE otherwise
+
+    \hideinitializer */
+#define islower(c$) \
+  ({ int _c = c$; \
+     ((_c >= 'a') && (_c <= 'z')); })
+
+/** Is a printable character? 
+
+    @param c = a character
+
+    @return TRUE if c is printable character, FALSE otherwise 
+
+    \hideinitializer */
+#define isprint(c$) \
+  ({ int _c = c$; \
+    ((_c >= 32) && (_c < 256)); })
 
 /** Is a printable character different from a whitespace and being
- * neither a letter nor a digit */
-int ispunct (int c);
+    neither a letter nor a digit
 
-/** Is whitespace? */
-int isspace (int c);
+    @param c = a character
 
-/** Is uppercase letter? */
-int isupper (int c);
+    @return TRUE or FALSE
+
+    \hideinitializer */
+#define ispunct(c$) \
+  ({ int _c = c$; \
+     (isgraph(_c)) && (!isalnum(_c)); })
+
+/** Is whitespace? 
+
+    @param c = a character
+
+    @return TRUE if c is whitespace, FALSE otherwise
+
+    \hideinitializer */
+#define isspace(c$) \
+  ({ int _c = c$; \
+     ((_c == '\f') || (_c == '\n') || (_c == '\r') || (_c == '\t') || (c == '\v') || (c == ' ')); })
+
+/** Is uppercase letter? 
+
+    @param c = a character
+
+    @return TRUE if c is an uppercase letter, FALSE otherwise
+
+    \hideinitializer */
+#define isupper(c$) \
+  ({ int _c = c$; \
+     ((_c >= 'A') && (_c <= 'Z')); })
 
 /** Is hexa digit? */
 int isxdigit (int c);

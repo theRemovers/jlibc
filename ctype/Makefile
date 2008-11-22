@@ -1,7 +1,6 @@
 include ../Makefile.config
 
-SRCC=islower.c isprint.c
-SRCC+=ispunct.c isspace.c isupper.c isxdigit.c toupper.c tolower.c
+SRCC=isxdigit.c toupper.c tolower.c
 SRCS=
 SRCH=ctype.h
 OBJS=$(SRCC:.c=.o) $(SRCS:.s=.o)
