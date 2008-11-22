@@ -136,10 +136,27 @@
 /** Is hexa digit? */
 int isxdigit (int c);
 
-/** Conversion to uppercase */
-int toupper (int c);
+/** Conversion to uppercase 
 
-/** Conversion to lowercase */
-int tolower (int c);
+    @param c = a character
+
+    @return corresponding uppercase letter
+
+    \hideinitializer */
+#define toupper(c$) \
+  ({ int _c = c$; \
+     islower(_c)?(_c + 'A' - 'a'):_c; })
+
+
+/** Conversion to lowercase 
+
+    @param c = a character
+
+    @return corresponding lowercase letter
+
+    \hideinitializer */
+#define tolower(c$) \
+  ({ int _c = c$; \
+     isupper(_c)?(_c + 'a' - 'A'):_c; })
 
 #endif
