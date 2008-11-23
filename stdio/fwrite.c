@@ -19,5 +19,22 @@
 #include <stdio.h>
 
 size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream) {
-  return stream->write(stream,ptr,size,nmemb);
+  if(stream->write != NULL) {
+    return stream->write(stream,ptr,size,nmemb);
+  } else {
+    int i;
+    char *s = (char *) ptr;
+    for(i = 0; i < nmemb; i++) {
+      int j;
+      for(j = 0; j < size; j++) {
+	if(fputc(*s++, stream) == EOF) {
+	  break;
+	}
+      }
+      if(j < size) {
+	break;
+      }
+    }
+    return i;
+  }
 }

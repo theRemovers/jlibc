@@ -4,8 +4,8 @@ SRCS=crt0.s
 SRCC=start.c
 SRCH=main.h jagtypes.h jagdefs.h
 OBJS=$(SRCC:.c=.o) $(SRCS:.s=.o)
-ASUBDIRS=string stdlib ctype stdio
-OSUBDIRS=doc
+ASUBDIRS=string stdlib stdio
+OSUBDIRS=doc ctype
 SUBDIRS=$(ASUBDIRS) $(OSUBDIRS)
 
 PROJECT=jlibc

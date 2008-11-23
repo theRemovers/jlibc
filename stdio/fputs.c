@@ -19,5 +19,23 @@
 #include <stdio.h>
 
 int fputs(const char *s, FILE *stream) {
-  return stream->puts(stream,s);
+  if(stream->puts != NULL) {
+    return stream->puts(stream,s);
+  } else {
+    char c;
+    int ret = 0;
+    while((c = *s++)) {
+      if(fputc(c, stream) == EOF) {
+	ret = EOF;
+	break;
+      }
+      if(c == '\n') {
+	if(fflush(stream) == EOF) {
+	  ret = EOF;
+	  break;
+	}
+      }
+    }
+    return ret;
+  }
 }
