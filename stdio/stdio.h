@@ -32,6 +32,9 @@
 
 typedef struct FILE {
   void *data;
+  size_t (*read)(struct FILE *self, void *ptr, size_t size, size_t nmemb);
+  int (*getc)(struct FILE *self);
+  char *(*gets)(struct FILE *self, char *s, int size);
   int (*eof)(struct FILE *self);
   int (*putc)(struct FILE *self,char c);
   int (*puts)(struct FILE *self,const char *s);
@@ -60,5 +63,17 @@ int fclose(FILE *stream);
 
 /** Flush a file */
 int fflush(FILE *stream);
+
+/** Write data to a file */
+size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);
+
+/** Read data from a file */
+size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);
+
+/** Read a character from a file */
+int fgetc(FILE *stream);
+
+/** Read a string from a file */
+char *fgets(char *s, int size, FILE *stream);
 
 #endif
