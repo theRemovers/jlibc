@@ -19,6 +19,10 @@
 #include <stdio.h>
 
 int fputc(char c, FILE *stream) {
-  return stream->putc(stream,c);
+  if(stream->putc != NULL) {
+    return stream->putc(stream,c);
+  } else {
+    return EOF;
+  }
 }
 

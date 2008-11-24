@@ -19,5 +19,9 @@
 #include <stdio.h>
 
 int feof(FILE *stream) {
-  return stream->eof(stream);
+  if(stream->eof != NULL) {
+    return stream->eof(stream);
+  } else {
+    return 0;
+  }
 }
