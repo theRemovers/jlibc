@@ -1,6 +1,9 @@
 include ../Makefile.config
 
-SRCC=fputc.c fputs.c fprintf.c fclose.c fflush.c feof.c fwrite.c
+SRCC=fclose.c feof.c fflush.c
+SRCC+=fputc.c fputs.c fgetc.c fgets.c 
+SRCC+=fread.c fwrite.c
+SRCC+=fprintf.c
 SRCC+=vfprintf.c sprintf.c vsprintf.c
 SRCS=
 SRCH=stdio.h
