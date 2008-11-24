@@ -23,21 +23,21 @@ char *fgets(char *s, int size, FILE *stream) {
     return stream->gets(stream, s, size);
   } else {
     int i;
-    char *res = s;
+    char *str = s;
     for(i = 0; i < size-1; i++) {
       int c = fgetc(stream);
       if(c == EOF)  {
-	if(i == 0) {
-	  res = NULL;
-	}
-	break;
-      }
-      if(c == '\n') {
 	break;
       }
       *s++ = (char)c;
+      if(c == '\n') {
+	break;
+      }
+    }
+    if(str == s) {
+      str = NULL;
     }
     *s++ = '\0';
-    return res;
+    return str;
   }
 }
