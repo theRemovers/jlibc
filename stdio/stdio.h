@@ -42,7 +42,7 @@ typedef struct FILE {
   char *(*gets)(struct FILE *self, char *s, int size);
   // output
   size_t (*write)(struct FILE *self,const void *ptr, size_t size, size_t nmemb);
-  int (*putc)(struct FILE *self,char c);
+  int (*putc)(struct FILE *self, int c);
   int (*puts)(struct FILE *self,const char *s);
   // general purpose
   int (*seek)(struct FILE *self, long offset, int whence);
@@ -56,7 +56,7 @@ typedef struct FILE {
 int feof(FILE *stream);
 
 /** Put a character in the given file */
-int fputc(char c, FILE *stream);
+int fputc(int c, FILE *stream);
 
 /** Write a string in the given file */
 int fputs(const char *s, FILE *stream);
@@ -84,5 +84,11 @@ int fgetc(FILE *stream);
 
 /** Read a string from a file */
 char *fgets(char *s, int size, FILE *stream);
+
+/** Fseek */
+int fseek(FILE *stream, long offset, int whence);
+
+/** Ftell */
+long ftell(FILE *stram);
 
 #endif

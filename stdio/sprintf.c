@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdarg.h>
 
-static int putc(FILE *stream, char c) {
+static int putc(FILE *stream, int c) {
   *((char*)stream->data++) = c;
   return (int)c;
 }
