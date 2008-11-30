@@ -18,13 +18,10 @@
 
 #include <stdio.h>
 
-#define TRUE 1
-#define FALSE 0
-
-int feof(FILE *stream) {
-  if(stream->eof != NULL) {
-    return stream->eof(stream);
+int fseek(FILE *stream, long offset, int whence) {
+  if(stream->seek != NULL) {
+    return stream->seek(stream, offset, whence);
   } else {
-    return TRUE;
+    return -1;
   }
 }

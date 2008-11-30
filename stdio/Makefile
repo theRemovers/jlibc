@@ -1,6 +1,6 @@
 include ../Makefile.config
 
-SRCC=fclose.c feof.c fflush.c
+SRCC=fclose.c feof.c fflush.c fseek.c ftell.c
 SRCC+=fputc.c fputs.c fgetc.c fgets.c 
 SRCC+=fread.c fwrite.c
 SRCC+=fprintf.c

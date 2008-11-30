@@ -25,14 +25,12 @@ static int eof(FILE *stream) {
 
 int sprintf(char *str,const char *fmt, ...) {
   if(str == NULL) return -1;
-  FILE *fp = malloc(sizeof(FILE));
+  FILE *fp = calloc(1, sizeof(FILE));
   fp->data = str;
   fp->eof = eof;
   fp->putc = putc;
   fp->puts = puts;
   fp->write = write;
-  fp->flush = NULL;
-  fp->close = NULL;
   va_list ap;
   va_start(ap,fmt);
   int nb = vfprintf(fp,fmt,ap);

@@ -30,17 +30,26 @@
 
 #define EOF (-1)
 
+#define SEEK_SET        0       /* Seek from beginning of file.  */
+#define SEEK_CUR        1       /* Seek from current position.  */
+#define SEEK_END        2       /* Seek from end of file.  */
+
 typedef struct FILE {
   void *data;
+  // input
   size_t (*read)(struct FILE *self, void *ptr, size_t size, size_t nmemb);
   int (*getc)(struct FILE *self);
   char *(*gets)(struct FILE *self, char *s, int size);
-  int (*eof)(struct FILE *self);
+  // output
+  size_t (*write)(struct FILE *self,const void *ptr, size_t size, size_t nmemb);
   int (*putc)(struct FILE *self,char c);
   int (*puts)(struct FILE *self,const char *s);
-  size_t (*write)(struct FILE *self,const void *ptr, size_t size, size_t nmemb);
+  // general purpose
+  int (*seek)(struct FILE *self, long offset, int whence);
+  long (*tell)(struct FILE *self);
   int (*flush)(struct FILE *self);
   int (*close)(struct FILE *self);
+  int (*eof)(struct FILE *self);
 } FILE;
 
 /** Is end of file? */

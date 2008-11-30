@@ -18,13 +18,10 @@
 
 #include <stdio.h>
 
-#define TRUE 1
-#define FALSE 0
-
-int feof(FILE *stream) {
-  if(stream->eof != NULL) {
-    return stream->eof(stream);
+long ftell(FILE *stream) {
+  if(stream->tell != NULL) {
+    return stream->tell(stream);
   } else {
-    return TRUE;
+    return -1;
   }
 }
