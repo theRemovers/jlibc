@@ -10,13 +10,13 @@ SUBDIRS=$(ASUBDIRS) $(OSUBDIRS)
 
 PROJECT=jlibc
 # change also in Doxyfile!!!
-PROJECT_NUMBER=0.5.6
+PROJECT_NUMBER=0.5.7
 
 export PROJECT_NUMBER
 
 TARFILE=$(PROJECT)-$(PROJECT_NUMBER).tar
 
-DISTFILES=Makefile $(SRCS) $(SRCC) $(SRCH) 
+DISTFILES=Makefile.config Makefile $(SRCS) $(SRCC) $(SRCH) 
 DISTFILES+=ChangeLog LICENSE jaguar.inc TODO build.sh
 INSTALLH=jagtypes.h jagdefs.h
 INSTALLLIB=crt0.o $(PROJECT).a
