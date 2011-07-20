@@ -27,6 +27,9 @@
 
 #define STACKSIZE (16*1024)
 
+/** Absolute value */
+int abs(int i);
+
 /** Exit abnormally (illegal) */
 //void abort();
 #define abort() asm("illegal")

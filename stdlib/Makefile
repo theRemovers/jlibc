@@ -1,7 +1,7 @@
 include ../Makefile.config
 
 #SRCC=malloc.c calloc.c free.c 
-SRCC=malloc.c atoi.c
+SRCC=malloc.c atoi.c abs.c
 #SRCC+=abort.c
 SRCS=rand.s
 SRCH=stdlib.h malloc.h
