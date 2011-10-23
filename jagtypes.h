@@ -22,6 +22,11 @@
 #ifndef __JAGTYPES_H
 #define __JAGTYPES_H
 
+typedef unsigned char uint8_t;
+typedef unsigned short int uint16_t;
+typedef unsigned long int uint32_t;
+typedef unsigned long long int uint64_t;
+
 /** A phrase is a 64 bit integer */
 typedef unsigned long long phrase;
 
