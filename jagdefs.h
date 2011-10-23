@@ -23,6 +23,7 @@
 #define __JAGDEFS_H
 
 #include "tom.h"
+#include "gpu.h"
 
 /* Jaguar Registers */
 #define BASE 0xf00000
