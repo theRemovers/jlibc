@@ -28,7 +28,6 @@
 #define BASE 0xf00000
 
 #define SET_SHORT_INT(value,addr) { short int v = (value); short int *a = (short int *)(addr); asm("movew %0,%1" : : "g" (v), "m" (*a) : "cc"); }
-#define SET_LONG_INT(value,addr) { long v = (value); long *a = (long *)(addr); asm("movel %0,%1" : : "g" (v), "m" (*a) : "cc"); }
 
 extern const phrase stop_object;
 extern const short int a_vde;
