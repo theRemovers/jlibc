@@ -16,8 +16,8 @@
 /* License along with this library; if not, write to the Free Software */
 /* Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA */
 
-/** \file jagdefs.h 
- * \brief Atari Jaguar related definitions.
+/** \file tom.h
+ * \brief TOM hardware registers
  */
 
 #ifndef __TOM_H
