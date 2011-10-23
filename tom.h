@@ -25,7 +25,7 @@
 
 #include <jagtypes.h>
 
-struct jregs {
+struct tom_registers {
   /* 0x00 */
   /* memory configuration */
   volatile uint16_t memcon1;
@@ -117,6 +117,6 @@ struct jregs {
   volatile uint32_t lbufC[360];
 };
 
-#define TOMREGS ((struct tomregs *)0xf00000)
+#define TOMREGS ((struct tom_registers *)0xf00000)
 
 #endif
