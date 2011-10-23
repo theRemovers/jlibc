@@ -74,7 +74,7 @@ struct gpu_registers {
   volatile uint32_t blit_i[4];
   volatile uint32_t blit_z[4];
   volatile uint32_t dummy2[857];
-  volatile uint32_t gpu_ram[2048];
+  volatile uint32_t gpu_ram[1024];
 };
 
 #define GPUREGS ((struct gpu_registers *)0xf02100)
