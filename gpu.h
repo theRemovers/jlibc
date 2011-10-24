@@ -35,7 +35,10 @@ struct gpu_registers {
   volatile uint32_t gpu_pc;
   volatile uint32_t gpu_ctrl;
   volatile uint32_t gpu_hidata;
-  volatile uint32_t gpu_remain;
+  union {
+    volatile uint32_t gpu_remain;
+    volatile uint32_t gpu_divctrl;
+  };
   /* 0x20 */
   volatile uint32_t dummy1[120];
   /* 0x200 */

@@ -36,19 +36,58 @@ struct jerry_registers {
   volatile uint16_t clk3;
   volatile uint16_t dummy2[5];
   /* 0x20 */
-  volatile uint16_t intctrl;
+  volatile uint16_t jint;
   volatile uint16_t dummy3[7];
   /* 0x30 */
   volatile uint16_t asidata;
   union {
-    volatile uint16_t ctrl;
-    volatile uint16_t stat;
-  } asi;
+    volatile uint16_t asictrl;
+    volatile uint16_t asistat;
+  };
   volatile uint16_t asiclk;
   volatile uint16_t jpit1_ro[2];
   volatile uint16_t jpit2_ro[2];
-  volatile uint16_t dummy4;
-  /* 0x40 */
+  volatile uint16_t dummy4[1+/* 0x40 */8160];
+  /* 0x4000 */
+  volatile uint16_t joy1;
+  volatile uint16_t joy2;
+  volatile uint16_t dummy5[12414];
+  /* 0xa100 */
+  volatile uint32_t dsp_flags;
+  volatile uint32_t dsp_mtxc;
+  volatile uint32_t dsp_mtxa;
+  volatile uint32_t dsp_bigend;
+  /* 0xa110 */
+  volatile uint32_t dsp_pc;
+  volatile uint32_t dsp_ctrl;
+  volatile uint32_t dsp_modmask;
+  union {
+    volatile uint32_t dsp_remain;
+    volatile uint32_t dsp_divctrl;
+  };
+  /* 0xa120 */
+  volatile uint32_t dsp_machi;
+  volatile uint32_t dummy6[7];
+  /* 0xa140 */
+  volatile uint32_t l_dac;
+  volatile uint32_t r_dac;
+  volatile uint32_t l_i2s;
+  volatile uint32_t r_i2s;
+  /* 0xa150 */
+  volatile uint32_t sclk;
+  volatile uint32_t smode;
+  volatile uint32_t dummy7[938];
+  /* 0xb000 */
+  volatile uint32_t dsp_ram[2048];
+  /* 0xd000 */
+  volatile uint32_t rom_tri[128];
+  volatile uint32_t rom_sine[128];
+  volatile uint32_t rom_amsine[128];
+  volatile uint32_t rom_sine12w[128];
+  volatile uint32_t rom_chirp16[128];
+  volatile uint32_t rom_ntri[128];
+  volatile uint32_t rom_delta[128];
+  volatile uint32_t rom_noise[128];
 };
 
 #define JERRYREGS ((struct jerry_registers *)0xf10000)
