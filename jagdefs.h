@@ -24,6 +24,7 @@
 
 #include "tom.h"
 #include "gpu.h"
+#include "jerry.h"
 
 /* Jaguar Registers */
 #define BASE 0xf00000

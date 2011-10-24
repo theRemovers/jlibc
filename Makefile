@@ -2,7 +2,7 @@ include Makefile.config
 
 SRCS=crt0.s
 SRCC=start.c
-SRCH=main.h jagtypes.h jagdefs.h tom.h gpu.h
+SRCH=main.h jagtypes.h jagdefs.h tom.h gpu.h jerry.h
 OBJS=$(SRCC:.c=.o) $(SRCS:.s=.o)
 ASUBDIRS=string stdlib stdio
 OSUBDIRS=doc ctype
@@ -18,7 +18,7 @@ TARFILE=$(PROJECT)-$(PROJECT_NUMBER).tar
 
 DISTFILES=Makefile.config Makefile $(SRCS) $(SRCC) $(SRCH) 
 DISTFILES+=ChangeLog LICENSE jaguar.inc TODO build.sh
-INSTALLH=jagtypes.h jagdefs.h tom.h gpu.h
+INSTALLH=jagtypes.h jagdefs.h tom.h gpu.h jerry.h
 INSTALLLIB=crt0.o $(PROJECT).a
 
 all: .depend $(PROJECT).a
