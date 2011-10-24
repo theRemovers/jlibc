@@ -119,4 +119,45 @@ struct tom_registers {
 
 #define TOMREGS ((struct tom_registers *)0xf00000)
 
+/* MEMCON1 */
+
+/* MEMCON2 */
+
+/* VMODE */
+#define VIDEN 1
+
+#define CRY16 (0 << 1)
+#define RGB24 (1 << 1)
+#define DIRECT16 (2 << 1)
+#define RGB16 (3 << 1)
+
+#define GENLOCK (1 << 3)
+#define INCEN (1 << 4)
+#define BINC (1 << 5)
+#define CSYNC (1 << 6)
+#define BGEN (1 << 7)
+#define VARMOD (1 << 8)
+
+#define PWIDTH1 (0 << 9)
+#define PWIDTH2 (1 << 9)
+#define PWIDTH3 (2 << 9)
+#define PWIDTH4 (3 << 9)
+#define PWIDTH5 (4 << 9)
+#define PWIDTH6 (5 << 9)
+#define PWIDTH7 (6 << 9)
+#define PWIDTH8 (7 << 9)
+
+/* INT1 */
+#define C_VIDENA (1 << 0)
+#define C_GPUENA (1 << 1)
+#define C_OPENA (1 << 2)
+#define C_PITENA (1 << 3)
+#define C_JERENA (1 << 4)
+
+#define C_VIDCLR (1 << 8)
+#define C_GPUCLR (1 << 9)
+#define C_OPCLR (1 << 10)
+#define C_PITCLR (1 << 11)
+#define C_JERCLR (1 << 12)
+
 #endif

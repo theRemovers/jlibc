@@ -82,4 +82,20 @@ struct gpu_registers {
 
 #define GPUREGS ((struct gpu_registers *)0xf02100)
 
+#define SRCEN (0x1)
+#define SRCENX (0x1 << 1)
+#define DSTEN (0x1 << 3)
+#define PATDSEL (0x1 << 16)
+#define CMPDST (0x1 << 25)
+#define BCOMPEN (0x1 << 26)
+#define DCOMPEN (0x1 << 27)
+#define BKGWREN (0x1 << 28)
+#define SRCSHADE (0x1 << 30)
+
+#define LFU_NAN (0x1 << 21)
+#define LFU_NA (0x2 << 21)
+#define LFU_AN (0x4 << 21)
+#define LFU_A (0x8 << 21)
+
+
 #endif
