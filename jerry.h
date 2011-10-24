@@ -80,14 +80,14 @@ struct jerry_registers {
   /* 0xb000 */
   volatile uint32_t dsp_ram[2048];
   /* 0xd000 */
-  volatile uint32_t rom_tri[128];
-  volatile uint32_t rom_sine[128];
-  volatile uint32_t rom_amsine[128];
-  volatile uint32_t rom_sine12w[128];
-  volatile uint32_t rom_chirp16[128];
-  volatile uint32_t rom_ntri[128];
-  volatile uint32_t rom_delta[128];
-  volatile uint32_t rom_noise[128];
+  const uint32_t rom_tri[128];
+  const uint32_t rom_sine[128];
+  const uint32_t rom_amsine[128];
+  const uint32_t rom_sine12w[128];
+  const uint32_t rom_chirp16[128];
+  const uint32_t rom_ntri[128];
+  const uint32_t rom_delta[128];
+  const uint32_t rom_noise[128];
 };
 
 #define JERRYREGS ((struct jerry_registers *)0xf10000)
