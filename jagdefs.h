@@ -22,6 +22,8 @@
 #ifndef __JAGDEFS_H
 #define __JAGDEFS_H
 
+#define SYSTEM_FREQUENCY 26593900
+
 #include "tom.h"
 #include "gpu.h"
 #include "jerry.h"

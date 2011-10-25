@@ -92,4 +92,23 @@ struct jerry_registers {
 
 #define JERRYREGS ((struct jerry_registers *)0xf10000)
 
+/* ASICTRL */
+#define ASI_ODD (1 << 0)
+#define ASI_PAREN (1 << 1)
+#define ASI_TXOPOL (1 << 2)
+#define ASI_RXIPOL (1 << 3)
+#define ASI_TINTEN (1 << 4)
+#define ASI_RINTEN (1 << 5)
+#define ASI_CLRERR (1 << 6)
+#define ASI_TXBRK (1 << 14)
+
+/* ASISTAT */
+#define ASI_RBF (1 << 7)
+#define ASI_TBE (1 << 8)
+#define ASI_PE (1 << 9)
+#define ASI_FE (1 << 10)
+#define ASI_OE (1 << 11)
+#define ASI_SERIN (1 << 13)
+#define ASI_ERROR (1 << 15)
+
 #endif
