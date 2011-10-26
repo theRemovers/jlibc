@@ -102,6 +102,10 @@ struct jerry_registers {
 #define ASI_CLRERR (1 << 6)
 #define ASI_TXBRK (1 << 14)
 
+#define ASI_ODDPARITY ASI_PAREN
+#define ASI_EVENPARITY (ASI_ODD | ASI_PAREN)
+#define ASI_NOPARITY 0
+
 /* ASISTAT */
 #define ASI_RBF (1 << 7)
 #define ASI_TBE (1 << 8)
