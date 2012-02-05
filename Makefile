@@ -10,7 +10,7 @@ SUBDIRS=$(ASUBDIRS) $(OSUBDIRS)
 
 PROJECT=jlibc
 # change also in Doxyfile!!!
-PROJECT_NUMBER=0.5.8
+PROJECT_NUMBER=0.5.9
 
 export PROJECT_NUMBER
 
