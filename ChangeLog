@@ -1,5 +1,9 @@
 	The Jaguar C Library.
 
+0.5.8
+-----
+	Fixed a bug in gets.
+
 0.5.7
 -----
 	Added definitions of TOM & JERRY registers.

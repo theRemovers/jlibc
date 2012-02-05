@@ -34,7 +34,7 @@ char *fgets(char *s, int size, FILE *stream) {
 	break;
       }
     }
-    if(str == s) {
+    if(i == 0) {
       str = NULL;
     }
     *s++ = '\0';
