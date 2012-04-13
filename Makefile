@@ -27,7 +27,7 @@ $(PROJECT).a: Makefile subdirs $(OBJS)
 	$(AR) rvs $(PROJECT).a start.o 
 	for dir in $(ASUBDIRS); do $(AR) rvs $(PROJECT).a $$dir/*.o; done
 
-.PHONY: subdirs $(SUBDIRS)
+.PHONY: subdirs $(SUBDIRS) all clean dist list-headers list-objects install
 
 subdirs: $(SUBDIRS)
 
