@@ -14,7 +14,7 @@ PROJECT_NUMBER=0.5.9
 
 export PROJECT_NUMBER
 
-TARFILE=$(PROJECT)-$(PROJECT_NUMBER).tar
+PROJECT_NAME=$(PROJECT)-$(PROJECT_NUMBER)
 
 DISTFILES=Makefile.config Makefile $(SRCS) $(SRCC) $(SRCH) 
 DISTFILES+=ChangeLog LICENSE jaguar.inc TODO build.sh
@@ -48,13 +48,16 @@ clean:
 	$(CC) -M $(SRCC) > .depend
 
 dist:
-	tar cfv $(TARFILE) $(DISTFILES); \
+	mkdir -p $(PROJECT_NAME); \
+	cp $(DISTFILES) $(PROJECT_NAME); \
 	for dir in $(SUBDIRS); do \
 	  for file in `$(MAKE) -s dist-files -C $$dir`; do \
-	    tar rfv $(TARFILE) "$$dir/$$file"; \
+	    mkdir -p "$(PROJECT_NAME)/$$dir"; \
+	    cp "$$dir/$$file" "$(PROJECT_NAME)/$$dir"; \
 	  done; \
-	done;
-	gzip $(TARFILE)
+	done; \
+	tar cfvz $(PROJECT_NAME).tar.gz $(PROJECT_NAME); \
+	rm -rf $(PROJECT_NAME)
 
 list-headers:
 	for file in $(INSTALLH); do \
