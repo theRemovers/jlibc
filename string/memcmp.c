@@ -16,7 +16,7 @@
 /* License along with this library; if not, write to the Free Software */
 /* Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA */
 
-#include <string.h>
+#include "string.h"
 
 int memcmp(const void *src1, const void *src2, size_t n) {
   unsigned char *s1 = (unsigned char *) src1;

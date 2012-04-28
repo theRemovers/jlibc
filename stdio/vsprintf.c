@@ -1,7 +1,7 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 #include <stdarg.h>
+#include "stdlib.h"
+#include "stdio.h"
+#include "string.h"
 
 static int putc(FILE *stream, int c) {
   *((char*)stream->data++) = c;

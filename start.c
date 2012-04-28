@@ -16,8 +16,7 @@
 /* License along with this library; if not, write to the Free Software */
 /* Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA */
 
-#include <stdlib.h>
-//extern void _m_init();
+#include "stdlib.h"
 
 extern char BSS_E[];
 #define ENDRAM 0x200000
@@ -40,7 +39,6 @@ void *sbrk(unsigned long nb) {
 }
 
 void __main() {
-  //  _m_init();
   sbrk_init = 0;
   sbrk_endram = ENDRAM-STACKSIZE;
   srand(1);

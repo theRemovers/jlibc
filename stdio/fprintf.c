@@ -16,9 +16,9 @@
 /* License along with this library; if not, write to the Free Software */
 /* Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA */
 
-#include <string.h>
 #include <stdarg.h>
-#include <stdio.h>
+#include "string.h"
+#include "stdio.h"
 
 int fprintf(FILE *stream, const char *fmt, ...) {
   int nb = 0;
