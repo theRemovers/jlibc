@@ -23,7 +23,7 @@
 #ifndef __JERRY_H
 #define __JERRY_H
 
-#include <jagtypes.h>
+#include "stdint.h"
 
 struct jerry_registers {
   /* 0x00 */

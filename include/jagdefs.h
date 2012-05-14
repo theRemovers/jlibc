@@ -27,15 +27,17 @@
 #include "tom.h"
 #include "gpu.h"
 #include "jerry.h"
+#include "stdint.h"
+#include "jagtypes.h"
 
 extern const phrase stop_object;
-extern const short int a_vde;
-extern const short int a_vdb;
-extern const short int a_hde;
-extern const short int a_hdb;
-extern const short int video_width;
-extern const short int video_height;
-extern const short int vblPerSec;
+extern const uint16_t a_vde;
+extern const uint16_t a_vdb;
+extern const uint16_t a_hde;
+extern const uint16_t a_hdb;
+extern const uint16_t video_width;
+extern const uint16_t video_height;
+extern const uint16_t vblPerSec;
 
 extern void reset();
 

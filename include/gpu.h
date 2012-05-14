@@ -23,7 +23,7 @@
 #ifndef __GPU_H
 #define __GPU_H
 
-#include <jagtypes.h>
+#include "stdint.h"
 
 struct gpu_registers {
   /* 0x00 */

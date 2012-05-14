@@ -23,7 +23,7 @@
 #ifndef __TOM_H
 #define __TOM_H
 
-#include <jagtypes.h>
+#include "stdint.h"
 
 struct tom_registers {
   /* 0x00 */
