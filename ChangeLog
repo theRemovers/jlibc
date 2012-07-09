@@ -1,5 +1,9 @@
 	The Jaguar C Library.
 
+0.5.10
+------
+	Added types definitions.
+
 0.5.9
 -----
 	Updated Makefile and build script.
