@@ -28,7 +28,7 @@ RANDGEN_R	equ	5
 _srand:	
 	move.l	d2,-(sp)
 	move.l	#random_seeds,a0
-	move.l	4(sp),d1
+	move.l	4+4(sp),d1
 	move.l	d1,d2
 	moveq	#RANDGEN_K,d0
 .init_seeds:
