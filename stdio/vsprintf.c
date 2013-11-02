@@ -24,14 +24,17 @@ static int eof(FILE *stream) {
 }
 
 int vsprintf(char *str,const char *fmt, va_list ap) {
+  FILE *fp;
+  int nb;
+
   if(str == NULL) return -1;
-  FILE *fp = calloc(1, sizeof(FILE));
+  fp = calloc(1, sizeof(FILE));
   fp->data = str;
   fp->eof = eof;
   fp->putc = putc;
   fp->puts = puts;
   fp->write = write;
-  int nb = vfprintf(fp,fmt,ap);
+  nb = vfprintf(fp,fmt,ap);
   free(fp);
   *(str + nb) = 0;
   return nb;

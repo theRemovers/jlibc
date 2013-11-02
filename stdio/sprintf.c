@@ -24,16 +24,19 @@ static int eof(FILE *stream) {
 }
 
 int sprintf(char *str,const char *fmt, ...) {
+  FILE *fp;
+  va_list ap;
+  int nb;
+
   if(str == NULL) return -1;
-  FILE *fp = calloc(1, sizeof(FILE));
+  fp = calloc(1, sizeof(FILE));
   fp->data = str;
   fp->eof = eof;
   fp->putc = putc;
   fp->puts = puts;
   fp->write = write;
-  va_list ap;
   va_start(ap,fmt);
-  int nb = vfprintf(fp,fmt,ap);
+  nb = vfprintf(fp,fmt,ap);
   va_end(ap);
   free(fp);
   *(str + nb) = 0;
