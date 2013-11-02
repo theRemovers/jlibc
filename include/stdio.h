@@ -34,22 +34,22 @@
 #define SEEK_CUR        1       /* Seek from current position.  */
 #define SEEK_END        2       /* Seek from end of file.  */
 
-typedef struct FILE {
+typedef struct _FILE {
   void *data;
   /* input */
-  size_t (*read)(struct FILE *self, void *ptr, size_t size, size_t nmemb);
-  int (*getc)(struct FILE *self);
-  char *(*gets)(struct FILE *self, char *s, int size);
+  size_t (*read)(struct _FILE *self, void *ptr, size_t size, size_t nmemb);
+  int (*getc)(struct _FILE *self);
+  char *(*gets)(struct _FILE *self, char *s, int size);
   /* output */
-  size_t (*write)(struct FILE *self,const void *ptr, size_t size, size_t nmemb);
-  int (*putc)(struct FILE *self, int c);
-  int (*puts)(struct FILE *self,const char *s);
+  size_t (*write)(struct _FILE *self,const void *ptr, size_t size, size_t nmemb);
+  int (*putc)(struct _FILE *self, int c);
+  int (*puts)(struct _FILE *self,const char *s);
   /* general purpose */
-  int (*seek)(struct FILE *self, long offset, int whence);
-  long (*tell)(struct FILE *self);
-  int (*flush)(struct FILE *self);
-  int (*close)(struct FILE *self);
-  int (*eof)(struct FILE *self);
+  int (*seek)(struct _FILE *self, long offset, int whence);
+  long (*tell)(struct _FILE *self);
+  int (*flush)(struct _FILE *self);
+  int (*close)(struct _FILE *self);
+  int (*eof)(struct _FILE *self);
 } FILE;
 
 /** Is end of file? */
