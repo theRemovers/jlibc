@@ -409,7 +409,7 @@ LACKS_STDLIB_H                default: NOT defined unless on WIN32
 #define LACKS_STRING_H
 #define LACKS_SYS_TYPES_H
 #define LACKS_ERRNO_H
-//#define LACKS_STDLIB_H 
+/* #define LACKS_STDLIB_H */
 
 /*
 DEFAULT_GRANULARITY        default: page size if MORECORE_CONTIGUOUS,

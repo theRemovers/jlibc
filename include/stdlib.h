@@ -31,7 +31,7 @@
 int abs(int i);
 
 /** Exit abnormally (illegal) */
-//void abort();
+/* void abort(); */
 #define abort() asm("illegal")
 
 /** String to int conversion */

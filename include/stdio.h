@@ -36,15 +36,15 @@
 
 typedef struct FILE {
   void *data;
-  // input
+  /* input */
   size_t (*read)(struct FILE *self, void *ptr, size_t size, size_t nmemb);
   int (*getc)(struct FILE *self);
   char *(*gets)(struct FILE *self, char *s, int size);
-  // output
+  /* output */
   size_t (*write)(struct FILE *self,const void *ptr, size_t size, size_t nmemb);
   int (*putc)(struct FILE *self, int c);
   int (*puts)(struct FILE *self,const char *s);
-  // general purpose
+  /* general purpose */
   int (*seek)(struct FILE *self, long offset, int whence);
   long (*tell)(struct FILE *self);
   int (*flush)(struct FILE *self);

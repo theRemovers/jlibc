@@ -24,14 +24,14 @@
 
 #include <stddef.h>
 
-// ASM 
+/* ASM */ 
 /** Clear the first length bytes of b */
 void bzero(void *b, size_t length);
 
 /** Set the first length bytes of dst to the character c */
 void *memset(const void *dst, int c, size_t length);
 
-// ASM
+/* ASM */
 /** Copy the first n bytes from in to out. The buffers may overlap. */
 void bcopy(const void *in, void *out, size_t n);
 
@@ -43,31 +43,31 @@ void *memcpy(void *out, const void *in, size_t n);
  * overlap. Returns out. */
 void *memmove(void *dst, const void *src, size_t length);
 
-// C
+/* C */
 /** Search a character in a string from left to right and returns a
  * pointer to it in the string or NULL if not present. */
 char *strchr(const char *string, int c);
 
-// C
+/* C */
 /** Search a character in a string from right to left and returns a
  * pointer to it in the string or NULL if not present. */
 char *strrchr(const char *string, int c);
 
-// C
+/* C */
 /** Search a byte in the first length bytes of a buffer and returns a
  * pointer to it in the buffer or NULL if not present. */
 void *memchr(const void *src, int c, size_t length);
 
-// C
+/* C */
 /** Compare the first n bytes of two buffers and returns the
  * lexicographic order. */
 int memcmp(const void *s1, const void *s2, size_t n);
 
-// C
+/* C */
 /** Compute the length of the string (terminated by a null byte) */
 size_t strlen(const char *str);
 
-// C
+/* C */
 /** Copy the src string in the dst string. Returns a pointer to the
  * end of the copy. */
 char *strcpy(char *dst, const char *src);
@@ -78,7 +78,7 @@ char *strncpy(char *dst, const char *src, size_t length);
 
 size_t strxfrm(char *s1, const char *s2, size_t n);
 
-// C
+/* C */
 /** Alphabetical order of string a and b. */
 int strcmp(const char *a, const char *b);
 
@@ -87,7 +87,7 @@ int strcmp(const char *a, const char *b);
 int strncmp(const char *a, const char * b, size_t length); 
 int strcoll(const char *stra, const char * strb);
 
-// C
+/* C */
 /** Append the src string at the end of the dst string */
 char *strcat(char *dst, const char *src);
 
@@ -95,7 +95,7 @@ char *strcat(char *dst, const char *src);
     the end of the dst string. */
 char *strncat(char *dst, const char *src, size_t length);
 
-// TODO
+/* TODO */
 char *strerror(int errnum);
 
 char *strpbrk(const char *s1, const char *s2);

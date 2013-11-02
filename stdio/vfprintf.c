@@ -146,9 +146,9 @@ int vfprintf(FILE *stream, const char *fmt, va_list ap) {
       base = 0;
       switch(c) {
       case 'h':
-	// short
+	/* short */
       case 'l':
-	// long
+	/* long */
 	c = *fmt++;
 	break;
       }
