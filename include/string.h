@@ -24,7 +24,7 @@
 
 #include <stddef.h>
 
-/* ASM */ 
+/* ASM */
 /** Clear the first length bytes of b */
 void bzero(void *b, size_t length);
 
@@ -84,7 +84,7 @@ int strcmp(const char *a, const char *b);
 
 /** Alphabetical order of at most the length first characters of a and
     b. */
-int strncmp(const char *a, const char * b, size_t length); 
+int strncmp(const char *a, const char * b, size_t length);
 int strcoll(const char *stra, const char * strb);
 
 /* C */
