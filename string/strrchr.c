@@ -22,7 +22,7 @@ char *strrchr(const char *s, int c) {
   const char *last = NULL;
 
   if (c) {
-    while (s=strchr(s, c)) {
+    while ((s = strchr(s, c))) {
       last = s;
       s++;
     }

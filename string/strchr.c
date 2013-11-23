@@ -22,7 +22,7 @@ char *strchr(const char *s, int i) {
   unsigned char c = (unsigned int)i;
 
   while(*s && *s != c) {
-    *s++;
+    s++;
   }
   if(*s != c) {
     s = NULL;

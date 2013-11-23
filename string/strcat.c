@@ -23,7 +23,7 @@ char *strcat(char *dst, const char *src) {
   while(*dst) {
     dst++;
   }
-  while(*dst++ = *src++) {
+  while((*dst++ = *src++)) {
   }
   return d;
 }
