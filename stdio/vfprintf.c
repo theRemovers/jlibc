@@ -121,7 +121,7 @@ int vfprintf(FILE *stream, const char *fmt, va_list ap) {
   long n;
   unsigned long d = 0;
   int base = 0;
-  char buffer[BUFSIZE];
+  char buffer[BUFSIZE+1];
 
   while((c = *fmt++)) {
     switch(c) {
@@ -153,7 +153,7 @@ int vfprintf(FILE *stream, const char *fmt, va_list ap) {
 	break;
       }
       switch(c) {
-      case 'd': 
+      case 'd':
 	n = va_arg(ap,long);
 	if(n < 0) {
 	  d = -n;
@@ -229,12 +229,12 @@ int vfprintf(FILE *stream, const char *fmt, va_list ap) {
 	default: {
 	  nbd = print_uint10(buffer,d);
 	  s = buffer;
-/* 	  while(d != 0) {  */
-/* 	    *--s = digits[d % base]; */
-/* 	    d /= base; */
-/* 	    nb++; */
-/* 	    nb_digit--; */
-/* 	  } */
+/*	  while(d != 0) {  */
+/*	    *--s = digits[d % base]; */
+/*	    d /= base; */
+/*	    nb++; */
+/*	    nb_digit--; */
+/*	  } */
 	}
 	}
 	nb += nbd;
