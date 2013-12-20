@@ -54,7 +54,7 @@ _text_start:
 	jsr	_bzero
 	addq.w	#8,sp
 	;; init video
-	bsr	init_video
+	bsr	_InitVideo
 	;; empty object list
 	move.l	#_stop_object,d0
 	swap	d0
@@ -88,7 +88,7 @@ _Interlace:
 	move.w	#600,	HVS
 	move.w	#1709,	HBB
 	move.w	#153,	HBE
-	bra.s	done
+	bra.s	.done
 .Init60HzI:
 	move.w	#0,	HC
 	move.w	#1,	VC
