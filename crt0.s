@@ -62,51 +62,6 @@ _text_start:
 	;; jump to main
 	jmp	_main
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Procedure: Interlace
-;            Sets up video signals correctly to enable interlaced video
-;            Modifies registers we were told never to touch.
-;            Code by Zerosquare of Jagware
-;
-        .globl  _Interlace
-_Interlace:
-	move.w	CONFIG, d0
-	andi.w	#16, d0
-	bne.s	.Init60HzI
-.Init50HzI:
-	move.w	#0,	HC
-	move.w	#1,	VC
-	move.w	#624,	VP
-	move.w	#614,	VEB
-	move.w	#619,	VS
-	move.w	#4,	VEE
-	move.w	#40,	VBE
-	move.w	#614,	VBB
-	move.w	#850,	HP
-	move.w	#1749,	HS
-	move.w	#787,	HEQ
-	move.w	#600,	HVS
-	move.w	#1709,	HBB
-	move.w	#153,	HBE
-	bra.s	.done
-.Init60HzI:
-	move.w	#0,	HC
-	move.w	#1,	VC
-	move.w	#524,	VP
-	move.w	#512,	VEB
-	move.w	#518,	VS
-	move.w	#5,	VEE
-	move.w	#30,	VBE
-	move.w	#512,	VBB
-	move.w	#844,	HP
-	move.w	#1743,	HS
-	move.w	#780,	HEQ
-	move.w	#595,	HVS
-	move.w	#1697,	HBB
-	move.w	#118,	HBE
-.done:
-	rts
-
         .globl  _InitVideo
 _InitVideo:
 	movem.l	d2-d6,-(sp)
