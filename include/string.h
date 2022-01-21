@@ -95,13 +95,20 @@ char *strcat(char *dst, const char *src);
     the end of the dst string. */
 char *strncat(char *dst, const char *src, size_t length);
 
+char *strpbrk(const char *s1, const char *s2);
+
+/** Get length of the maximum initial segment
+    Return Length in number of characters */
+size_t strspn(const char *s1, const char *s2);
+
+/** Find string separator token
+    Return pointer to string or null */
+char* strtok_r(char *s, const char *delimiters, char **save_ptr);
+char *strtok(char *source, const char *delimiters);
+
 /* TODO */
 char *strerror(int errnum);
 
-char *strpbrk(const char *s1, const char *s2);
-
-size_t strspn(const char *s1, const char *s2);
 char *strstr(const char *s1, const char *s2);
-char *strtok(char *source, const char *delimiters);
 
 #endif
