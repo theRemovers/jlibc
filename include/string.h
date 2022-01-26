@@ -24,6 +24,10 @@
 
 #include <stddef.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /* ASM */
 /** Clear the first length bytes of b */
 void bzero(void *b, size_t length);
@@ -106,9 +110,12 @@ size_t strspn(const char *s1, const char *s2);
 char* strtok_r(char *s, const char *delimiters, char **save_ptr);
 char *strtok(char *source, const char *delimiters);
 
-/* TODO */
 char *strerror(int errnum);
 
 char *strstr(const char *s1, const char *s2);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
