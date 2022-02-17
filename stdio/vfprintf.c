@@ -253,5 +253,6 @@ int vfprintf(FILE *stream, const char *fmt, va_list ap) {
     }
     if(c == 0) break;
   }
+  va_end(ap);
   return nb;
 }
