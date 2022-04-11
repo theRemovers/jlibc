@@ -31,7 +31,7 @@ void *sbrk(unsigned long nb) {
     sbrk_init = 1;
   }
   if(sbrk_ptr + nb > sbrk_endram) {
-    return NULL;
+    return (void *)(-1);
   }
   void *ret = (void *)sbrk_ptr;
   sbrk_ptr += nb;
